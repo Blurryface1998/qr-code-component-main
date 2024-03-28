@@ -1,0 +1,70 @@
+@use "../util" as *;
+
+.wrapper {
+  margin: 5% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  @include breakpoint-down(small) {
+    margin: rem(18);
+  }
+
+  main {
+    .container {
+      max-width: rem(320);
+      max-height: rem(497);
+      padding: rem(16);
+      background-color: var(--white);
+      border-radius: rem(20);
+
+      &__image {
+        max-width: rem(288);
+        max-height: rem(288);
+        background-color: var(--blueShade);
+        border-radius: rem(10);
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+
+        .imageClip {
+          clip-path: rect(22% 78% 78% 22%);
+        }
+      }
+
+      &__text {
+        margin: rem(24) 0;
+        text-align: center;
+
+        h1 {
+          color: var(--darkBlue);
+          padding: 0 rem(16) rem(8) rem(16);
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+          padding: rem(8) rem(16) 0 rem(16);
+          color: var(--grayishBlue);
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: rem(10);
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
